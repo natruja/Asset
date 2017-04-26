@@ -3,5 +3,6 @@
 	<title>ระบบ ตรวจนับทรัพย์สิน RO10 </title>
 
 	<link rel="stylesheet" href="css/bootstrap.min.css">
-	<script src="js/jquery.min.js" type="text/javascript" charset="utf-8" async defer></script>
-	<script src="js/bootstrap.min.js" type="text/javascript" charset="utf-8" async defer></script>
+	<link rel="stylesheet" type="text/css" href="css/build.css">
+	<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"  ></script>
+	<script src="js/bootstrap.min.js" type="text/javascript" charset="utf-8" ></script>

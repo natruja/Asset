@@ -15,12 +15,10 @@ $chk_value = $_POST["chk_value"];
 		$query = mysqli_query($conn, $update) or die ("Error".mysqli_error());
 
 		if($query){
-
-
 			 echo "<script>
-alert('บันทึกข้อมูลแล้วค่ะ');
-window.location.href='index.php';
-</script>";
+				alert('บันทึกข้อมูลแล้วค่ะ');
+				window.location.href='index.php';
+				</script>";
 
 		}else{
 			echo "no";

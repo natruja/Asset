@@ -25,8 +25,8 @@
 			        	check_unpass.hide();
 			        }
 
-
 			    });
+
 
 		});
 
@@ -110,60 +110,60 @@
 	<table  class="table table-striped table-bordered" width="80%">
 		 	<tbody>
 			<tr>
-				<td width="200px;">TAG NUM</td>
+				<td width="150px;">TAG NUM</td>
 				<th><?php echo $tage_num ?></th>
 			</tr>
 			<tr>
-				<td width="200px;">CATEGORY NAME</td>
+				<td width="150px;">CATEGORY NAME</td>
 				<th><?php echo $category_name ?></th>
 			</tr>
 			<tr>
-				<td width="200px;">BRAND</td>
+				<td width="150px;">BRAND</td>
 				<th><?php echo $brand ?></th>
 			</tr>
 			<tr>
-				<td width="200px;">MODEL</td>
+				<td width="150px;">MODEL</td>
 				<th><?php echo $model ?></th>
 			</tr>
 			<tr>
-				<td width="200px;">SERIAL NUM</td>
+				<td width="150px;">SERIAL NUM</td>
 				<th><?php echo $serial_num ?></th>
 			</tr>
 			<tr>
-				<td width="200px;">EMP NO</td>
+				<td width="150px;">EMP NO</td>
 				<th><?php echo $emp_no ?></th>
 			</tr>
 			<tr>
-				<td width="200px;">EMP NAME</td>
+				<td width="150px;">EMP NAME</td>
 				<th><?php echo $emp_name ?></th>
 			</tr>
 			<tr>
-				<td width="200px;">LOCATION NAME</td>
+				<td width="150px;">LOCATION NAME</td>
 				<th><?php echo $location_name ?></th>
 			</tr>
 			<tr>
-				<td width="200px;">Shope Code</td>
+				<td width="150px;">Shope Code</td>
 				<th><?php echo $shop_code ?></th>
 			</tr>
 			<tr>
-				<td width="250px;">Shope Name</td>
+				<td width="150px;">Shope Name</td>
 				<th><?php echo $shop_name ?></th>
 			</tr>
 			<tr>
-				<td width="250px;">ผลการตรวจจากหน่วยงาน</td>
+				<td width="150px;">ผลการตรวจจากหน่วยงาน</td>
 				<th><?php echo $message ?></th>
 			</tr>
 			<tr>
-				<td width="250px;">ชื่อผู้ถือครอง</td>
+				<td width="150px;">ชื่อผู้ถือครอง</td>
 				<th><?php echo $change_own ?></th>
 			</tr>
 			<tr>
-				<td width="250px;">หมายเหตุ</td>
+				<td width="150px;">หมายเหตุ</td>
 				<th><?php echo $remark_name ?></th>
 			</tr>
 		</tbody>
 	</table>
-		<form action="update_data.php" method="POST" accept-charset="utf-8">
+		<form action="update_data.php" method="POST" enctype="multipart/form-data"  accept-charset="utf-8">
 			<input type="hidden" name="tage_num2" value="<?php echo $tage_num ?>" id="tage_num2">
 		<h2>ผลการตรวจครั้งนี้</h2>
 
@@ -179,8 +179,6 @@
  		<textarea name="remask_rechek" id="remask_rechek" class="form-control custom-control" style="width: 390px; margin: 0px 687px 0px 0px; height: 98px;"  ></textarea>
  		</div>
 </div>
-
-
 
 		<br>
 

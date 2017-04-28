@@ -1,4 +1,13 @@
-<?php
+<!DOCTYPE html>
+<html>
+<head>
+
+	<?php
+		include_once('header.php');
+	?>
+</head>
+<body>
+	<?php
 include_once('conn.php');
 session_start();
 ini_set('display_errors', TRUE);
@@ -27,19 +36,21 @@ switch ($chk_value) {
 }
 
 		if($query){
-			 echo "<script>
-				alert('บันทึกข้อมูลแล้วค่ะ');
-				window.location.href='index.php';
-				</script>";
+
+				header("Location: index.php");
+				exit();
+
 
 		}else{
-			 echo "<script>
-				alert('ไม่สามารถบันทึกข้อมูลได้');
-				window.location.href='index.php';
-				</script>";
+			 echo' <script type="text/javascript">
+				swal("ไม่สามารถบันทึกข้อมูลได้");
+				window.location.href="index.php";
+				</script> ';
 		}
 
 
 
 
 ?>
+</body>
+</html>

@@ -65,7 +65,7 @@
       <div class="jumbotron">
       <form action="#" method="POST" id="form_data" name="form_data" enctype="multipart/form-data"  accept-charset="utf-8">
         <h1> RO10 Asset </h1>
-        <p> รหัสทรัพย์สิน :   <input type="text" name="asset_code" value="" placeholder="" class="form-control" ></p>
+        <p> รหัสทรัพย์สิน :   <input type="text" name="asset_code" value="" placeholder="" class="form-control" autofocus="true"  ></p>
       <!--   <p> Serial Num :   <input type="text" name="serial_num" value="" placeholder="" class="form-control" ></p> -->
 			<button  name="btn_seach" value="" id="btn_seach" class="btn btn-primary">ค้นหาข้อมูล</button>
 			<button  name="rest" value="" id="btn_reset" class="btn "> Reset </button>

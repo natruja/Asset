@@ -27,7 +27,8 @@ ini_set('display_errors', TRUE);
 				asset_ro.recheck
 				FROM
 				asset_ro
-				WHERE asset_ro.tage_num LIKE '%".$asset_code."%'  ";
+				WHERE asset_ro.tage_num LIKE '%".$asset_code."%'
+				AND asset_ro.recheck IS  NULL ";
 		$query = mysqli_query($conn, $sql) or die ("error".mysqli_error());
 		$num = mysqli_num_rows($query);
 		if($num >= 1){
@@ -65,9 +66,6 @@ ini_set('display_errors', TRUE);
 
 
 		 echo json_encode($array);
-
-
-
 
 
 

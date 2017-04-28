@@ -1,8 +1,6 @@
 <?php
  session_start();
 
-  $_SESSION["ro10_app"] = "natruja.k@jasmine.com";
-
  $ro10_app  =  $_SESSION["ro10_app"];
 
 ?>
@@ -31,8 +29,17 @@
 			    });
 
 		});
+
+		function zoom() {
+            document.body.style.zoom = "85%"
+        }
+
+
 	</script>
-<body>
+	<style type="text/css" media="screen">
+
+	</style>
+<body onload="zoom()">
 
 <div class="container">
 <div class="container-fluid">
@@ -178,8 +185,7 @@
 		<br>
 
 				<input type="submit" name="click" value="ยืนยันข้อมูลถูกต้อง" class="btn btn-primary">
-				<button onclick="history.go(-1);" class="btn btn-default">Back </button>
-
+			 	<input type="button" onclick="location.href='index.php';" value="Back" class="btn btn-default" />
 		</form>
 
 

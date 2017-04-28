@@ -1,6 +1,6 @@
 <?php
 include_once('conn.php');
-
+session_start();
 ini_set('display_errors', TRUE);
   $_SESSION["ro10_app"] = "natruja.k@jasmine.com";
 
@@ -26,7 +26,7 @@ switch ($chk_value) {
 		break;
 }
 
-			if($query){
+		if($query){
 			 echo "<script>
 				alert('บันทึกข้อมูลแล้วค่ะ');
 				window.location.href='index.php';

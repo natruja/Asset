@@ -27,11 +27,11 @@ ini_set('display_errors', TRUE);
 				asset_ro.recheck
 				FROM
 				asset_ro
-				WHERE asset_ro.tage_num LIKE '%".$asset_code."%'
-				AND asset_ro.recheck IS  NULL ";
+				WHERE asset_ro.tage_num LIKE '%".$asset_code."%' ";
 		$query = mysqli_query($conn, $sql) or die ("error".mysqli_error());
 		$num = mysqli_num_rows($query);
-		if($num >= 1){
+
+
 		while($row = mysqli_fetch_array($query)){
 				 		$tage_num = $row["tage_num"];
 				 		$category_name = $row["category_name"];
@@ -43,11 +43,11 @@ ini_set('display_errors', TRUE);
 				 		$location_name = $row["location_name"];
 				 		$shop_code = $row["shop_code"];
 				 		$shop_name = $row["shop_name"];
+				 		$recheck = $row["recheck"];
 
-			}
 
 
-						 $array = array("tage_num" => $tage_num,
+				 		 $array = array("tage_num" => $tage_num,
 			        	 			   "category_name" => $category_name,
 			        	 			   "brand" => $brand,
 			        	 			   "model" => $model,
@@ -56,13 +56,19 @@ ini_set('display_errors', TRUE);
 			                          "emp_name" => $emp_name,
 			                          "location_name" => $location_name,
 			                          "shop_name" => $shop_name,
-			                          "tage_num2" => $tage_num);
+			                          "tage_num2" => $tage_num,
+			                          "recheck" => $recheck);
+
+				 }
 
 
 
-		}else{
-				echo "ไม่พบข้อมูล";
-		}
+
+
+
+
+			//	echo "ไม่พบข้อมูล";
+
 
 
 		 echo json_encode($array);

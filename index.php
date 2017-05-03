@@ -18,6 +18,8 @@
 		 	var show_data = $('#show_data').hide();
 		 	var error = $('#error').hide();
 
+		 	var meet_data = $('#meet_data').hide();
+
 		 		$('#btn_seach').on('click', function(e) {
 		 			var form_data = $('#form_data').serialize();
 		 			$.ajax({
@@ -27,7 +29,7 @@
 					   	dataType: 'json',
 					   	success: function(data){
 					   		 console.log(data);
-					   		 show_data.show();
+
 					   		 $('#tage_num').html(data.tage_num);
 					   		 $('#category_name').html(data.category_name);
 					   		 $('#brand').html(data.brand);
@@ -37,6 +39,18 @@
 					   		 $('#emp_name').html(data.emp_name);
 					   		 $('#location_name').html(data.location_name);
 					   		 $('#shop_name').html(data.shop_name);
+					   		 $('#recheck').val(data.recheck);
+
+
+					   		 if($('#recheck').val() === 'Y') {
+					   		  	meet_data.show();
+					   		  	show_data.hide();
+					   		 }else if ($('#recheck').val() === '') {
+					   		 	show_data.show();
+					   		 	meet_data.hide();
+					   		 }
+
+
 
 					   		  $('#tage_num2').val(data.tage_num2);
 
@@ -72,6 +86,7 @@
 	</form>
       </div>
 	<form action="form_update.php" method="POST" accept-charset="utf-8" enctype="multipart/form-data" >
+
       <div id="show_data">
       	<table class="table table-striped table-bordered" id="">
       		<thead>
@@ -88,7 +103,7 @@
       		</thead>
       		<tbody>
       			<tr>
-
+				<input type="text" name="recheck" id="recheck" value="">
       			<input type="hidden" name="tage_num2" id="tage_num2" value="">
       				<td><span for="textfield"  for="textfield" class="control-label" id="tage_num" align="left"></span></td>
       				<td><span for="textfield" class="control-label" id="category_name" align="left"></span></td>
@@ -107,7 +122,11 @@
       	</form>
       </div>
       <div id="error">
-ไม่พบข้อมูล
+		ไม่พบข้อมูล
+      </div>
+
+       <div id="meet_data">
+			<h2>รหัสทรัพย์สินนี้ท่านได้ตรวจสอบแล้ว</h2>
       </div>
 
 

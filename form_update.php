@@ -71,7 +71,6 @@
 				asset_ro.user_check,
 				asset_ro.recheck,
 				asset_ro.remark_name
-
 				FROM
 				asset_ro
 				WHERE asset_ro.tage_num = '".$tage_num2."' ";
@@ -94,7 +93,7 @@
 
 		switch ($visible_y) {
 			case 'Y':
-					$message = "พบ";
+				$message = "พบ";
 				break;
 			case 'N':
 				$message = "ไม่พบ";

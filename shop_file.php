@@ -136,6 +136,7 @@ while($row = mysqli_fetch_assoc($query)){
 		$visible_y = $row["visible_y"];
 		$change_own = $row["change_own"];
 		$remark_name = $row["remark_name"];
+
 		switch ($visible_y) {
 			case 'Y':
 				 $msg = "เจอ";
@@ -143,7 +144,6 @@ while($row = mysqli_fetch_assoc($query)){
 			case 'N':
 			 	$msg = "ไม่เจอ";
 				break;
-
 			default:
 				# code...
 				break;

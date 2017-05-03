@@ -18,6 +18,7 @@ ini_set('display_errors', TRUE);
 
 $tage_num2 = $_POST["tage_num2"];
 $chk_value = $_POST["chk_value"];
+$name_change = $_POST["name_change"];
 
 $remask_rechek = $_POST["remask_rechek"];
 
@@ -28,6 +29,10 @@ switch ($chk_value) {
 		break;
 	case 'N':
 		$update = "UPDATE asset_ro SET  date_update = NOW(), user_check = '".$ro10_app."', recheck = '".$chk_value."', remask_recheck = '".$remask_rechek."'  WHERE tage_num = '".$tage_num2."' ";
+		$query = mysqli_query($conn, $update) or die ("Error".mysqli_error());
+		break;
+	case 'C':
+		$update = "UPDATE asset_ro SET  date_update = NOW(), user_check = '".$ro10_app."', recheck = 'Y', change_tran_y = '".$chk_value."', name_change_tranfer = '".$name_change."'   WHERE tage_num = '".$tage_num2."' ";
 		$query = mysqli_query($conn, $update) or die ("Error".mysqli_error());
 		break;
 	default:

@@ -16,13 +16,20 @@
 
 			var check_unpass = $('#check_unpass').hide();
 
+			var change_tranfer = $('#change_tranfer').hide();
+
 			 $('input[name="chk_value"]').click(function(){
 			        var  radio_value = $(this).attr("value");
 
 			        if( radio_value === 'N'){
+			        		change_tranfer.hide();
 			        		check_unpass.show();
+			        }else if(radio_value === 'C' ) {
+			        		change_tranfer.show();
+			        		check_unpass.hide();
 			        }else{
 			        	check_unpass.hide();
+			        	change_tranfer.hide();
 			        }
 
 			    });
@@ -169,7 +176,8 @@
 <div class="alert alert-danger">
 	<div class="pretty">
 		 <input type="radio" id="checkbox" name="chk_value" value="N"><label><i class="mdi mdi-check"></i>  &nbsp;  ไม่เจอ </label> &nbsp;
-		 <input type="radio" id="checkbox" name="chk_value" value="Y"><label><i class="mdi mdi-check"></i> &nbsp;   เจอ</label>
+		 <input type="radio" id="checkbox" name="chk_value" value="Y"><label><i class="mdi mdi-check"></i> &nbsp;   เจอ</label>&nbsp;
+		 <input type="radio" id="checkbox" name="chk_value" value="C"><label><i class="mdi mdi-check"></i> &nbsp;   โอนย้าย</label>
 	</div>
 </div>
 
@@ -178,6 +186,13 @@
  		<textarea name="remask_rechek" id="remask_rechek" class="form-control custom-control" style="width: 390px; margin: 0px 687px 0px 0px; height: 98px;"  ></textarea>
  		</div>
 </div>
+
+<div class="alert alert-info" id="change_tranfer">
+<div class="form-group">
+ 		<textarea name="name_change" id="name_change" class="form-control custom-control"  placeholder="โปรดระบุชื่อ" style="width: 390px; margin: 0px 687px 0px 0px; height: 98px;"  ></textarea>
+ 	</div>
+</div>
+
 
 		<br>
 

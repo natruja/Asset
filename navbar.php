@@ -11,9 +11,9 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Re-check</a></li>
-          <!--   <li><a href="#about">#</a></li>
-            <li><a href="#contact">#</a></li> -->
+            <li><a href="index.php">Re-check</a></li>
+            <li><a href="shop_file.php">ข้อมูล BYI ที่ยังไม่ได้ตรวจสอบ</a></li>
+            <!--<li><a href="#contact">#</a></li> -->
           </ul>
         </div><!--/.nav-collapse -->
       </div>

@@ -12,9 +12,25 @@
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
             <li><a href="index.php">Re-check</a></li>
-            <li><a href="shop_file.php">ข้อมูล BYI ที่ยังไม่ได้ตรวจสอบ</a></li>
-            <!--<li><a href="#contact">#</a></li> -->
+             <li class="dropdown">
+               <a class="dropdown-toggle" data-toggle="dropdown" href="#">ข้อมูล ณ วันที่ 03-05-2017 <span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="shop_file.php">BYI</a></li>
+                  </ul>
+               </li>
+
+            </ul>
           </ul>
+          <ul class="nav navbar-nav">
+          <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">ข้อมูล ณ วันที่ 04-05-2017
+              <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="nd.php">Network Design</a></li>
+                <li><a href="nom.php">Network Operation & Maintenance </a></li>
+             </ul>
+          </li>
+       </ul>
         </div><!--/.nav-collapse -->
       </div>
     </nav>

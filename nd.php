@@ -2,47 +2,34 @@
 include_once('conn.php');
 ini_set('display_errors', TRUE);
 
-?>
+ ?>
 <!DOCTYPE html>
 <html>
 <head>
 <?php
     include_once('header.php');
   ?>
-  <script>
-  function doExport(selector, params) {
-      var options = {
-        tableName: 'total',
-        worksheetName: 'All_total'
-      };
-
-      $.extend(true, options, params);
-
-      $(selector).tableExport(options);
-  }
- function zoom () {
+   <script>
+  	$(document).ready(function() {
+  		$("#nd a:contains('ข้อมูล ณ วันที่ 04-05-2017')").parent().addClass('active');
+  		$("#Network Design a:contains('ข้อมูล ณ วันที่ 04-05-2017')").parent().addClass('active');
+  	});
+  	 function zoom () {
 		document.body.style.zoom = "90%";
 	}
-
-
-	$(document).ready(function(e) {
-		 $("#byi a:contains('BYI')").parent().addClass('active');
-		 $("#byi a:contains('ข้อมูล ณ วันที่ 03-05-2017')").parent().addClass('active');
-	});
-  </script>
-
+  	</script>
 </head>
-<body onload="zoom();" id="byi">
+<body id="nd" onload="zoom()">
 <div class="container-fluid">
 <?php
 	include_once('navbar.php');
 
-$sql_not_count = "SELECT
+	$sql_not_count = "SELECT
 asset_ro.id_asset,
 COUNT(asset_ro.tage_num) as count_not
 FROM
 asset_ro
-WHERE asset_ro.init_area = 'BYI'
+WHERE asset_ro.init_area = 'ND'
 AND asset_ro.recheck = '' ";
 $query_count_not = mysqli_query($conn, $sql_not_count) or die ("error".mysqli_error());
 $row_count_not = mysqli_fetch_assoc($query_count_not);
@@ -54,37 +41,27 @@ asset_ro.id_asset,
 COUNT(asset_ro.tage_num) as count_success
 FROM
 asset_ro
-WHERE asset_ro.init_area = 'BYI'
+WHERE asset_ro.init_area = 'ND'
 AND asset_ro.recheck = 'Y' ";
 $query_count = mysqli_query($conn, $sql_count) or die ("error".mysqli_error());
 $row_count = mysqli_fetch_assoc($query_count);
 
 $count_date = $row_count["count_success"];
 ?>
-	<div >
 
-	</div>
-
-
-<div class="row">
+		<div class="row">
 				<div class="col-md-12">
 				<div class="alert alert-info">
 						<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-						<h2>ศูนย์บางใหญ่</h2>
+						<h2>ทีม Network Design</h2>
 							<h3> <font color="red"> ยังไม่ได้นับ <?php echo $count_not_count ?> :::  นับแล้ว <?php echo $count_date ?></font>  </h3>
 					</div>
 				</div>
-</div>
 
-<div class="row">
-<div class="col-md-12">
+				<div class="col-md-12">
 <div class="table-responsive">
-
-
-<a href="#" onClick="doExport('#export', {type: 'excel',fileName: 'BYI-ข้อมูลที่ยังไม่ได้ตรวจสอบ' ,worksheetName: 'BYI_ข้อมูลที่ยังไม่ได้ตรวจสอบ'});"> <font size="5px;"> Excel  </font> </a>
-<div class="table-responsive">
-<table class="table table-hover table-striped" id="export">
-	<thead>
+	<table class="table table-hover table-striped  ">
+		<thead>
 		<tr>
 			<th>No.</th>
 			<th>TAG NUM</th>
@@ -103,7 +80,8 @@ $count_date = $row_count["count_success"];
 			<th>ลงนาม</th>
 		</tr>
 	</thead>
-	<tbody>
+		<tbody>
+
 	<?php
 
 			$sql = "SELECT
@@ -132,7 +110,7 @@ asset_ro.init_area,
 asset_ro.report_header
 FROM
 asset_ro
-WHERE asset_ro.init_area = 'BYI'
+WHERE asset_ro.init_area = 'ND'
 AND asset_ro.recheck = '' ";
 
 $i = 1;
@@ -192,11 +170,15 @@ while($row = mysqli_fetch_assoc($query)){
 	<?php
 		}
 	 ?>
-	</tbody>
-</table>
+		</tbody>
+	</table>
 </div>
+				</div>
+
+		</div>
+
+
 </div>
-</div>
-</div>
+
 </body>
 </html>
